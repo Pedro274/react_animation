@@ -6,8 +6,6 @@ const modal = (props) => {
     
     const classesToApply = [classes.Modal, classes[props.show ? "ModalOpen" : "ModalClose"]].join(' ');
 
-
-
     return (
     <div className={classesToApply}>
         <h1>A Modal</h1>

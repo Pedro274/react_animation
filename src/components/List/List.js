@@ -9,13 +9,7 @@ const List = () => {
     })
 
     const addItemHandler = () => {
-        setState((prevState) => {
-            return {
-                items: prevState
-                    .items
-                    .concat(prevState.items.length + 1)
-            };
-        });
+        setState({items: state.items.concat([state.items[state.items.length-1]+1])});
     }
 
     const removeItemHandler = (selIndex) => {
@@ -24,8 +18,8 @@ const List = () => {
                 items: prevState
                     .items
                     .filter((item, index) => index !== selIndex)
-            };
-        });
+            }
+        })
     }
 
     const listItems = state
@@ -34,11 +28,8 @@ const List = () => {
             <li key={index} className="ListItem" onClick={() => removeItemHandler(index)}>
                 {item}
             </li>
-        ));
+        ))
 
-
-
-        
     return (
             <div>
                 <button className="Button" onClick={addItemHandler}>Add Item</button>
